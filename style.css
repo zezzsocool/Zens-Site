@@ -97,8 +97,17 @@ body, html {
 }
 
 .main-title span {
+    text-align: center;
     color: var(--neon-blue);
     text-shadow: 0 0 20px var(--neon-blue);
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--metal-grey);
+    font-size: 0.9rem;
+    margin-top: 10px;
+    letter-spacing: 2px;
 }
 
 /* Tombol Next */
