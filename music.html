@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbit Music | Neural Interface</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="music-page">
+
+    <div class="page-transition"><div class="loader-line"></div></div>
+    <audio id="soundHover" src="hover.mp3" preload="auto"></audio>
+    <audio id="soundClick" src="click.mp3" preload="auto"></audio>
+    <audio id="audio-player" src="amin-paling-serius.mp3" preload="auto"></audio>
+
+    <nav class="side-nav">
+        <div class="menu-btn" id="menuToggle">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+        <div class="nav-dropdown" id="navLinks">
+            <ul class="nav-list">
+                <li><a href="index.html">Welcome</a></li>
+                <li><a href="javascript:void(0)" id="openProfile">Profile</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="top-nav">
+        <nav class="nav-row">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="journey.html">Journey</a>
+            <a href="project.html">Project</a>
+            <a href="music.html" class="active">Music</a>
+        </nav>
+    </header>
+
+    <main class="music-layout">
+     <div class="center-viewport">
+    <div class="main-wrapper">
+        <div class="music-card">
+            <div class="song-info">
+                <h2 id="track-title">INITIALIZING...</h2>
+                <p id="track-artist">SYSTEM READY</p>
+            </div>
+
+            <div class="image-holder">
+                <img id="track-cover" src="aminc.jpg" alt="Disk">
+                <img id="track-cover" src="bertautc.jpg" alt="Disk">
+                <img id="track-cover" src="multoc.jpg" alt="Disk">
+                <img id="track-cover" src="cardiganc.jpg" alt="Disk">
+                <img id="track-cover" src="cantmovec.jpg" alt="Disk">
+                <img id="track-cover" src="gooc.jpg" alt="Disk">
+                <img id="track-cover" src="lwahookc.jpg" alt="Disk">
+                <img id="track-cover" src="abadic.jpg" alt="Disk">
+                <img id="track-cover" src="abyc.jpg" alt="Disk">
+                <img id="track-cover" src="hwmc.jpg" alt="Disk">
+                <img id="track-cover" src="nspsc.jpg" alt="Disk">
+            </div>
+
+            <div class="tracking-box">
+                <span id="current-time"></span>
+                <div class="progress-container" id="progress-container">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <span id="duration"></span>
+            </div>
+
+            <div class="controls">
+                <button class="btn-pop" id="prev"><i class="fas fa-backward"></i></button>
+                <button class="btn-pop play-btn" id="play"><i class="fas fa-play"></i></button>
+                <button class="btn-pop" id="next"><i class="fas fa-forward"></i></button>
+            </div>
+        </div>
+
+        <div class="lyrics-side">
+    <div class="gif-container">
+        <img src="ship.gif" alt="Sad Vibes" class="sad-gif" id="sadGif">
+        <p class="gif-caption">Need some music too, huh?</p>
+    </div>
+</div>
+    </div>
+</div>
+<div class="profile-container">
+    <div class="profile-card">
+        <img src="bkgpp.jpg" alt="My Profile" class="profile-img">
+    </div>
+</div>
+<audio id="audio-player"></audio>
+    </main>
+<div id="profileModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            
+            <h2 class="profile-name">Zazkia Priyatna</h2>
+            <p class="profile-subtitle">Where you can contact me</p>
+
+            <div class="contact-list">
+                <div class="contact-item">
+                    <span class="label">Email:</span>
+                    <a href="mailto:zezzsogood45556@gmail.com" class="value">zezzsogood45556@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="label">Instagram:</span>
+                    <a href="https://www.instagram.com/zezzdevilking?igsh=MXc3ZHZidXFvZ29hMQ==" class="value">@zezzdevilking</a>
+                </div>
+                <div class="contact-item">
+                    <span class="label">YouTube:</span>
+                    <a href="https://youtube.com/@nicetryzezz?si=y8kmv9VJW4SGHkLw" class="value">@nicetryzezz</a>
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button class="btn-home-modal" onclick="location.href='home.html'">Home</button>
+        </div>
+    </div>
+</div>
+    <script src="script.js"></script>
+    <script>
+    // 1. DATA LAGU
+    const songs = [
+        { title: "Amin Paling Serius", artist: "Sal Priadi", src: "amin.mp3", cover: "aminc.jpg"},
+        { title: "Bertaut", artist: "Nadin Amizah", src: "bertaut.mp3", cover: "bertautc.jpg" },
+        { title: "Multo", artist: "Cup Of Joe", src: "multo.mp3", cover: "multoc.jpg" },
+        { title: "Cardigan", artist: "Taylor Swift", src: "cardigan.mp3", cover: "cardiganc.jpg" },
+        { title: "The Man Who Can't Be Moved", artist: "The Script", src: "cantmove.mp3", cover: "cantmovec.jpg" },
+        { title: "Goo Goo Dolls", artist: "Iris", src: "goo.mp3", cover: "gooc.jpg" },
+        { title: "Line Without a Hook", artist: "Ricky Montgomery", src: "lwahook.mp3", cover: "lwahookc.jpg" },
+        { title: "Abadi (Indo Version)", artist: "Dendi Nata", src: "abadi.mp3", cover: "abadic.jpg" },
+        { title: "About You", artist: "The 1975", src: "aby.mp3", cover: "abyc.jpg" },
+        { title: "Here With Me", artist: "D4vd", src: "hwm.mp3", cover: "hwmc.jpg" },
+        { title: "No Surprises", artist: "Radiohead", src: "nsps.mp3", cover: "nspsc.jpg" }
+    ];
+
+    let index = 0;
+    const audio = document.getElementById("audio-player");
+    const progressContainer = document.getElementById("progress-container");
+    const progressFill = document.getElementById("progress-fill");
+    const playBtn = document.getElementById("play");
+
+    // 2. FUNGSI LOAD (Simple & Clean)
+    function loadSong(idx) {
+        const song = songs[idx];
+        document.getElementById('track-title').innerText = song.title;
+        document.getElementById('track-artist').innerText = song.artist;
+        document.getElementById('track-cover').src = song.cover;
+        
+        audio.src = song.src; // Tracking Manual
+        audio.load();
+    }
+
+    // 3. FUNGSI PLAY (Pake trik sukses yang tadi)
+    function playMusic() {
+        audio.play()
+            .then(() => {
+                playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            })
+            .catch(err => console.log("User must click first!"));
+    }
+
+    // 4. EVENT HANDLERS
+    playBtn.addEventListener('click', () => {
+        if (audio.paused) {
+            playMusic();
+        } else {
+            audio.pause();
+            playBtn.innerHTML = '<i class="fas fa-play"></i>';
+        }
+    });
+
+    document.getElementById('next').addEventListener('click', () => {
+        index = (index + 1) % songs.length;
+        loadSong(index);
+        playMusic();
+    });
+
+    document.getElementById('prev').addEventListener('click', () => {
+        index = (index - 1 + songs.length) % songs.length;
+        loadSong(index);
+        playMusic();
+    });
+
+    // 5. PROGRESS BAR (Manual Tracking)
+    audio.addEventListener('timeupdate', () => {
+        const fill = document.getElementById('progress-fill');
+        if (audio.duration) {
+            const percent = (audio.currentTime / audio.duration) * 100;
+            fill.style.width = percent + "%";
+        }
+    });
+    progressContainer.addEventListener('click', (e) => {
+        const width = progressContainer.clientWidth; // Lebar total bar
+        const clickX = e.offsetX; // Posisi kursor pas nge-klik
+        const duration = audio.duration; // Total durasi lagu
+
+        // Rumus: (Posisi Klik / Lebar Bar) * Durasi Lagu
+        audio.currentTime = (clickX / width) * duration;
+    });
+    // Pas lagu abis, suruh browser nge-klik tombol next buat kita
+audio.addEventListener('ended', () => {
+    console.log("Lagu abis, pindah otomatis...");
+    document.getElementById('next').click(); 
+});
+
+    // 6. SFX (KITA JINAKKAN BIAR GAK BENTROK)
+    // Jangan panggil Audio baru tiap kali hover, panggil sekali aja
+    const hoverSound = new Audio('hover.mp3');
+    const clickSound = new Audio('click.mp3');
+
+    document.addEventListener('mouseover', (e) => {
+        if(e.target.classList.contains('btn-pop')) {
+            hoverSound.currentTime = 0;
+            hoverSound.play().catch(() => {}); // Cuekin kalau error
+        }
+    });
+
+    // Inisialisasi
+    loadSong(index);
+    </script>
+</body>
+</html>

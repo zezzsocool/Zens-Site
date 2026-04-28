@@ -1,0 +1,1324 @@
+/* Aturan Dasar & Font */
+:root {
+    --white: #ffffff;
+    --neon-blue: #00f2ff;
+    --metal-grey: #808080;
+    --bg-space: #000205;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: radial-gradient(circle at center, #0a192f 0%, var(--bg-space) 100%);
+    font-family: 'Orbitron', sans-serif;
+    color: var(--white);
+    overflow: hidden;
+}
+
+/* Navigasi Titik Tiga */
+.side-nav {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    z-index: 999;
+}
+
+.menu-btn {
+    width: 45px;
+    height: 45px;
+    border: 2px solid var(--white); /* Aturan 12: Border Putih */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.menu-btn:hover {
+    transform: scale(1.1); /* Aturan 10: Zoom */
+    box-shadow: 0 0 15px var(--white); /* Aturan 11: Highlight */
+}
+
+.dot {
+    width: 22px;
+    height: 3px;
+    background: var(--white);
+}
+
+.nav-dropdown {
+    display: none;
+    margin-top: 10px;
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid var(--metal-grey); /* Request: Abu-abu */
+}
+
+.nav-list {
+    list-style: none;
+    padding: 5px;
+    margin: 0;
+}
+
+.nav-list li a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--metal-grey); /* Warna Abu-abu */
+    text-decoration: none;
+    font-size: 0.8rem;
+    border: 1px solid var(--metal-grey); /* Bordering text abu-abu */
+    margin: 5px;
+    transition: 0.3s;
+}
+
+.nav-list li a:hover {
+    color: var(--white);
+    border-color: var(--white);
+    transform: scale(1.05);
+}
+
+/* Container Utama ala Video (Teks-Tombol-Robot) */
+.content-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px 0;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 3rem;
+    letter-spacing: 5px;
+    margin: 0;
+}
+
+.main-title span {
+    color: var(--neon-blue);
+    text-shadow: 0 0 20px var(--neon-blue);
+}
+
+/* Tombol Next */
+.next-btn {
+    text-decoration: none;
+    color: #000;
+    background: var(--white);
+    padding: 12px 60px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: 2px solid var(--white); /* Aturan 12 */
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.next-btn:hover {
+    transform: scale(1.2); /* Aturan 10 */
+    background: transparent;
+    color: var(--white);
+    box-shadow: 0 0 25px var(--neon-blue); /* Aturan 11 */
+}
+
+/* Robot Frame */
+.robot-frame {
+    border: 0px solid var(--white); /* Aturan 12: Border Putih Terang */
+    padding: 10px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+
+.robot-gif {
+    width: 500px;
+    display: block;
+}
+
+/* Animasi Halus (Aturan 8) */
+@keyframes spaceFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.content-container {
+    animation: spaceFloat 5s ease-in-out infinite;
+}
+/* --- POP-UP MODAL STYLING --- */
+.modal {
+    display: none; /* Sembunyi dulu */
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Background gelap transparan */
+    backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    background: linear-gradient(145deg, #050f1a, #000000);
+    margin: 10% auto;
+    padding: 30px;
+    border: 3px solid var(--white); /* Aturan 12 */
+    width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0, 242, 255, 0.2);
+    animation: modalSlide 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes modalSlide {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: var(--metal-grey);
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    color: var(--white);
+    transform: rotate(90deg);
+}
+
+.profile-name {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.profile-subtitle {
+    color: var(--neon-blue);
+    font-size: 0.8rem;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.contact-list {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid var(--metal-grey); /* Border abu-abu */
+    transition: 0.3s;
+}
+
+.contact-item:hover {
+    border-color: var(--white);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(10px); /* Aturan 10: Animasi gerak */
+}
+
+.label {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--metal-grey);
+}
+
+.value {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* Tombol Home di Modal */
+.btn-home-modal {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+    padding: 10px 40px;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-home-modal:hover {
+    background: var(--white);
+    color: black;
+    box-shadow: 0 0 15px var(--white);
+    transform: scale(1.1);
+}
+/*nNAVIGASI*/
+/* Container Utama Navigasi Atas */
+.top-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px; /* Tentukan tinggi agar tidak menutupi seluruh layar */
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid var(--metal-grey);
+    z-index: 900;
+    /* Jangan pakai pointer-events none di sini kalau bingung, pakai z-index saja */
+}
+
+.nav-row {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-row a {
+    color: var(--metal-grey);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 8px 12px;
+    border: 1px solid transparent;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.nav-row a:hover, .nav-row a.active {
+    color: var(--white);
+    border: 1px solid var(--white);
+    box-shadow: 0 0 15px var(--neon-blue);
+    transform: scale(1.1);
+}
+
+/* Side Nav (Titik Tiga) */
+.side-nav {
+    position: fixed;
+    top: 20px; /* Sesuaikan agar pas di tengah bar hitam top-nav */
+    left: 30px;
+    z-index: 2000; /* WAJIB lebih tinggi dari top-nav */
+}
+
+.menu-btn {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    background: rgba(0,0,0,0.5);
+}
+
+/* Perbaikan dropdown agar muncul di bawah tombol */
+.nav-dropdown {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.95);
+    border: 1px solid var(--metal-grey);
+    min-width: 150px;
+}
+/* --- LAYOUT HOME (Teks Kiri, Gambar Kanan) --- */
+.home-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10%;
+}
+
+.profile-layout {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.text-area {
+    flex: 1;
+    text-align: left;
+}
+
+.name-title {
+    font-size: 3.5rem;
+    margin: 0;
+}
+
+.job-tag {
+    color: var(--neon-blue);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.desc-text {
+    line-height: 1.6;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+/* Frame Robot Home */
+.robot-frame-home {
+    border: 3px solid var(--white); /* Aturan 12 */
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: 0.4s;
+}
+
+.robot-frame-home:hover {
+    transform: scale(1.05); /* Aturan 10 */
+    box-shadow: 0 0 30px var(--neon-blue); /* Aturan 11 */
+}
+
+.robot-gif-home {
+    width: 320px;
+    display: block;
+}
+/* --- ANIMASI TRANSISI PAGE --- */
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-space);
+    z-index: 99999; /* Paling atas dari segalanya */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    pointer-events: none;
+}
+
+/* Garis loading futuristik */
+.loader-line {
+    width: 0%;
+    height: 2px;
+    background: var(--neon-blue);
+    box-shadow: 0 0 15px var(--neon-blue);
+    animation: loadProgress 0.6s ease-in-out forwards;
+}
+
+/* Efek saat halaman selesai dimuat */
+.page-loaded .page-transition {
+    transform: translateY(-100%); /* Layar naik ke atas */
+}
+
+@keyframes loadProgress {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+/* Animasi konten masuk (Fade In) */
+.content-container, .home-container {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 1s ease 0.5s; /* Muncul perlahan setelah transisi */
+}
+
+.page-loaded .content-container, 
+.page-loaded .home-container {
+    opacity: 1;
+    transform: scale(1);
+}
+/* --- ABOUT PAGE STYLING --- */
+.about-page {
+    overflow-y: auto; /* Aktifkan scroll vertikal */
+}
+
+/* Scrollbar Futuristik */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { 
+    background: var(--neon-blue); 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.scroll-container {
+    padding: 120px 10% 50px 10%; /* Jarak atas buat navigasi */
+}
+
+.about-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 20px;
+    border-left: 4px solid var(--neon-blue);
+    padding-left: 15px;
+    text-transform: uppercase;
+}
+
+/* Futuristic Frame (Aturan 12) */
+.futuristic-frame {
+    border: 2px solid var(--white);
+    position: relative;
+    background: rgba(255, 255, 255, 0.02);
+    transition: 0.3s;
+}
+
+.futuristic-frame:hover {
+    box-shadow: 0 0 20px var(--neon-blue);
+    border-color: var(--neon-blue);
+    transform: scale(1.02);
+}
+
+/* Layout About Me */
+.about-flex {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+}
+
+.profile-pic img { width: 100%; height: 100%; object-fit: cover; }
+
+.about-text-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border: 1px solid var(--metal-grey);
+    line-height: 1.6;
+    color: #ddd;
+}
+
+/* Grid Rapi (What I Like & Hobbies) */
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.item-card {
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.placeholder-img {
+    width: 80%;
+    height: 80%;
+    background: linear-gradient(45deg, #111, #222);
+}
+
+/* Custom CSS untuk About Web di bawah */
+.full-width { width: 100%; }
+/* Container Grid untuk Kartu RPG */
+.rpg-grid {
+    display: grid;
+    /* Membuat kolom otomatis yang pas (sekitar 3 kartu per baris di layar besar) */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* --- RPG CARD STYLING --- */
+.rpg-card {
+    background: rgba(10, 20, 35, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    transition: all 0.4s ease;
+    clip-path: polygon(0 0, 90% 0, 100% 10%, 100% 100%, 10% 100%, 0 90%);
+}
+
+.rpg-card:hover {
+    border-color: var(--neon-blue);
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
+    background: rgba(15, 30, 50, 0.9);
+}
+
+.card-image-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3/4; /* Proporsi tinggi ala kartu karakter */
+    overflow: hidden;
+    background: #000;
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 95% 100%, 0 100%);
+}
+
+.card-image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
+.rpg-card:hover img {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.card-details {
+    padding: 15px 5px;
+    text-align: left;
+}
+
+.detail-label {
+    font-size: 0.65rem;
+    color: var(--neon-blue);
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.detail-name {
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 5px 0;
+    text-transform: uppercase;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.detail-story {
+    font-size: 0.8rem;
+    color: #ccc;
+    line-height: 1.5;
+    border-left: 2px solid var(--neon-blue);
+    padding-left: 10px;
+}
+
+/* Dekorasi Siku */
+.corner-decor {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--neon-blue);
+    z-index: 2;
+}
+.top-left { top: 5px; left: 5px; border-right: none; border-bottom: none; }
+.top-right { top: 5px; right: 5px; border-left: none; border-bottom: none; }
+/* --- JOURNEY PAGE STYLING --- */
+.journey-page {
+    overflow-y: auto;
+}
+
+.journey-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+.main-title {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--neon-blue);
+    margin-bottom: 50px;
+    text-shadow: 0 0 15px var(--neon-blue);
+}
+
+.category-block {
+    margin-bottom: 80px;
+}
+
+.cat-title {
+    font-size: 1.8rem;
+    color: var(--white);
+    border-bottom: 2px solid var(--metal-grey);
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+}
+
+/* Item Wrapper */
+.journey-item {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+/* Pola Zig-Zag */
+.journey-item.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Frame Gambar HUD */
+.journey-card {
+    flex: 1;
+}
+
+.hud-frame {
+    position: relative;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--metal-grey);
+    clip-path: polygon(10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%);
+    transition: 0.4s;
+}
+
+.hud-frame img {
+    width: 100%;
+    display: block;
+    clip-path: polygon(10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%);
+}
+
+.journey-item:hover .hud-frame {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+    transform: scale(1.02);
+}
+
+/* Deskripsi Teks */
+.journey-desc {
+    flex: 1;
+}
+
+.log-date {
+    font-size: 0.7rem;
+    color: var(--neon-blue);
+    font-family: 'Orbitron', sans-serif;
+}
+
+.journey-desc h3 {
+    font-size: 1.5rem;
+    color: var(--white);
+    margin: 10px 0;
+}
+
+.journey-desc p {
+    color: #aaa;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+/* --- ANIMASI KHUSUS JOURNEY (HYPERSPACE JUMP) --- */
+
+/* State awal (saat layar hitam/transisi) */
+.journey-page .journey-wrapper {
+    opacity: 0;
+    transform: scale(0.8) translateY(50px);
+    filter: blur(10px);
+    transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* State setelah page loaded */
+.page-loaded.journey-page .journey-wrapper {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+}
+
+/* Animasi tambahan untuk HUD Frame agar muncul satu per satu */
+.journey-item {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s ease-out;
+}
+
+.journey-item.reverse {
+    transform: translateX(30px);
+}
+
+.page-loaded .journey-item {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Delay bertahap agar munculnya estetik */
+.journey-item:nth-child(1) { transition-delay: 0.2s; }
+.journey-item:nth-child(2) { transition-delay: 0.4s; }
+.journey-item:nth-child(3) { transition-delay: 0.6s; }
+.journey-item:nth-child(4) { transition-delay: 0.8s; }
+/* --- 1. Taruh paling bawah di style.css --- */
+
+/* Animasi Hyperspace (muncul dari kecil & blur) */
+.journey-page .journey-wrapper {
+    opacity: 0;
+    transform: scale(0.8) translateY(50px);
+    filter: blur(10px);
+    transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.page-loaded.journey-page .journey-wrapper {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+}
+
+/* Animasi Entry untuk tiap item (muncul dari samping) */
+.journey-item {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s ease-out;
+}
+.journey-item.reverse {
+    transform: translateX(30px);
+}
+.page-loaded .journey-item {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Delay supaya munculnya satu-satu (Staggered) */
+.journey-item:nth-child(1) { transition-delay: 0.2s; }
+.journey-item:nth-child(2) { transition-delay: 0.4s; }
+.journey-item:nth-child(3) { transition-delay: 0.6s; }
+
+/* Visual Scanner Line pada foto */
+.hud-frame {
+    position: relative;
+    width: 100%;
+    /* Tambahkan aspect-ratio di sini juga */
+    aspect-ratio: 1 / 1; 
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--metal-grey);
+    clip-path: polygon(10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%);
+    transition: 0.4s;
+    display: flex; /* Tambahan agar gambar di tengah */
+    align-items: center;
+    justify-content: center;
+}
+
+.hud-frame img {
+    width: 100%;
+    height: 100%; /* Paksa tinggi penuh */
+    object-fit: cover; /* Agar gambar tidak gepeng tapi terpotong rapi */
+    display: block;
+    clip-path: polygon(10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%);
+}
+/* --- FIX MODAL & DROPDOWN LAYER --- */
+
+/* Pastikan Modal di urutan paling tinggi (Z-Index 9999) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999 !important; /* Angka tertinggi */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Background gelap transparan */
+    backdrop-filter: blur(10px); /* Efek blur di belakang modal */
+}
+
+.modal-content {
+    z-index: 10000 !important;
+    /* Sisanya biarkan sesuai desainmu */
+}
+
+/* Navigasi Titik Tiga juga harus di atas */
+.side-nav {
+    z-index: 999;
+}
+
+.nav-dropdown {
+    z-index: 1000;
+}
+
+/* Pastikan transisi page tidak menutupi modal saat dipanggil */
+.page-transition {
+    z-index: 900; /* Lebih rendah dari modal */
+}
+/* FIX: Pastikan Body Page Project Bisa Scroll */
+.project-page {
+    overflow-y: auto !important;
+    height: auto;
+    min-height: 100vh;
+}
+
+.project-wrapper {
+    padding: 120px 20px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* PROFIL SECTION */
+.project-header-profile {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 50px;
+    background: rgba(0, 242, 255, 0.05);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 242, 255, 0.2);
+}
+
+.profile-frame {
+    width: 100px;
+    height: 100px;
+    border: 3px solid var(--neon-blue);
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 15px var(--neon-blue);
+}
+
+.profile-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+.neon-glow-text {
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    text-shadow: 0 0 10px var(--neon-blue);
+    margin: 0;
+}
+
+/* GRID & KARTU NYALA */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.project-card.neon-box {
+    background: rgba(0, 10, 20, 0.9);
+    border: 1px solid var(--neon-blue); /* NYALA UTAMA */
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.3); /* GLOW HALUS */
+    display: flex;
+    flex-direction: column;
+    transition: 0.4s;
+    height: 100%;
+}
+
+.project-card:hover {
+    box-shadow: 0 0 25px rgba(0, 242, 255, 0.6); /* NYALA TERANG SAAT HOVER */
+    transform: translateY(-10px);
+}
+
+/* GAMBAR (Dikecilkan sizenya sesuai permintaan) */
+.img-slot {
+    width: 100%;
+    height: 160px; /* Ukuran gambar lebih kecil */
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid var(--neon-blue);
+}
+
+.img-slot img { width: 100%; height: 100%; object-fit: cover; }
+
+/* TEXT AREA (Dibuat lebih luas) */
+.text-slot {
+    padding: 25px; /* Ruang lebih luas untuk teks */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-slot h3 { font-family: 'Orbitron', sans-serif; color: #fff; margin: 10px 0; }
+.text-slot p { font-size: 0.9rem; color: #ccc; line-height: 1.6; margin-bottom: 20px; }
+
+/* TOMBOL AKSES */
+.btn-glow {
+    margin-top: auto;
+    padding: 10px;
+    text-align: center;
+    color: var(--neon-blue);
+    border: 1px solid var(--neon-blue);
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.btn-glow:hover {
+    background: var(--neon-blue);
+    color: #000;
+    box-shadow: 0 0 15px var(--neon-blue);
+}
+/* --- FIX SCROLL ONLY --- */
+
+/* 1. Pastikan container utama tidak memotong konten */
+html, body {
+    height: auto !important; 
+    overflow-y: auto !important;
+    overflow-x: hidden; /* Biar gak goyang kiri kanan */
+}
+
+/* 2. Targetkan class pembungkus project kamu */
+.project-page, .scroll-container {
+    height: auto !important;
+    min-height: 100vh;
+    overflow-y: visible !important; /* Paksa munculin konten bawah */
+    display: block !important; /* Memastikan bukan flex/grid yang nge-lock height */
+}
+
+/* 3. Pastikan wrapper grid-nya bisa memanjang */
+.project-wrapper {
+    height: auto !important;
+    display: block !important;
+    padding-bottom: 100px; /* Kasih ruang nafas di paling bawah */
+}
+/* --- CSS POPUP MODAL PROJECT --- */
+
+.modal-project {
+    display: none; /* Sembunyi dulu bos */
+    position: fixed;
+    z-index: 10000; /* Pangkat paling tinggi */
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Gelap transparan */
+    backdrop-filter: blur(10px); /* Efek blur di belakang */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    
+    /* Animasi fade in buat wadah hitam */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Saat modal aktif, fade in wadah */
+.modal-project.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-project-content {
+    background-color: #020c1b;
+    border: 2px solid var(--neon-blue, #00f2ff);
+    width: 100%;
+    max-width: 700px; /* Lebar popup */
+    position: relative;
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.5);
+    padding: 30px;
+    
+    /* ANIMASI POPUP MEMBESAR (Scale) */
+    transform: scale(0.7); /* Mulai dari kecil */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Saat modal aktif, konten membesar jadi ukuran asli */
+.modal-project.active .modal-project-content {
+    transform: scale(1);
+}
+
+/* Tombol Tutup X */
+.close-project {
+    position: absolute;
+    right: 15px; top: 10px;
+    color: var(--neon-blue, #00f2ff);
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 10;
+}
+.close-project:hover { transform: rotate(90deg) scale(1.2); }
+
+/* --- FIX MODAL IMAGE SIZE --- */
+
+.modal-body-layout {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start; /* Biar teks di sampingnya nggak ketarik ke tengah */
+}
+
+.modal-image-slot {
+    flex: 0 0 400px !important; /* Paksa jadi 400px */
+    width: 400px !important;
+}
+
+.modal-image-slot img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 3px solid #00f2ff; /* Tebalin border biar nyala */
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+}
+
+/* SISI KANAN: Text */
+.modal-text-slot {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.modal-text-slot h2 {
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    font-size: 1.5rem;
+}
+.separator-line {
+    height: 2px;
+    background: linear-gradient(90deg, #00f2ff, transparent);
+    margin: 10px 0;
+}
+.modal-text-slot p {
+    color: #ccc;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Tombol Link YT Futuristik */
+.btn-yt {
+    margin-top: auto;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    transition: 0.3s;
+    text-align: center;
+}
+.btn-yt:hover {
+    background-color: #ff0000;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+    transform: translateY(-3px);
+}
+.btn-yt i { margin-right: 8px; } /* Jarak icon */
+
+/* Responsif buat HP */
+@media (max-width: 600px) {
+    .modal-body-layout { flex-direction: column; align-items: center; }
+    .modal-image-slot { flex: 0 0 150px; width: 150px; }
+}
+/* Tambahan Fix Ukuran Gambar Modal */
+.modal-image-slot {
+    flex: 0 0 350px !important; /* Paksa lebar slot gambar */
+    width: 350px !important;
+}
+
+.modal-image-slot img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important; /* Paksa kotak 1:1 */
+    object-fit: cover !important;
+    border: 2px solid #00f2ff;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+}
+
+.modal-body-layout {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+/* Biar gak rusak di layar kecil */
+@media (max-width: 800px) {
+    .modal-body-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+    .modal-image-slot {
+        width: 100% !important;
+        flex: none !important;
+        max-width: 280px;
+    }
+}
+
+
+
+/* Layout Music */
+:root {
+    --neon: #00f2ff;
+    --card-bg: rgba(2, 12, 27, 0.95);
+}
+
+/* Biar posisi di tengah garis horizontal & vertikal */
+.center-viewport {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ini yang bikin ke tengah secara vertikal */
+    min-height: 100vh; /* Full layar */
+    width: 100%;
+    background: #020c1b; /* Samain sama background spaceship lu */
+}
+
+.main-wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: center; /* Playlist & Player rata tengah */
+}
+
+/* KARTU DENGAN ANIMASI POPUP */
+.music-card {
+    width: 380px;
+    background: var(--card-bg);
+    border: 2px solid var(--neon);
+    border-radius: 30px;
+    padding: 35px;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efek kenyal */
+}
+
+/* Saat kartu di-hover, outline & ukuran membesar (Popup) */
+.music-card:hover {
+    transform: scale(1.05); /* Membesar */
+    box-shadow: 0 0 35px var(--neon); /* Outline makin terang */
+    border-color: #ffffff; /* Outline berubah putih dikit pas popup */
+}
+
+.image-holder {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 25px;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.1); /* Image tanpa glow sesuai request */
+    overflow: hidden;
+}
+
+.image-holder img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Styling Button Pop */
+.btn-pop {
+    background: transparent;
+    border: 1px solid var(--neon);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-pop:hover {
+    transform: scale(1.1);
+    background: var(--neon);
+    color: black;
+}
+.progress-container {
+    width: 100%;
+    height: 4px; /* Tipis aja biar elegan */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    cursor: pointer;
+    margin-bottom: 15px; /* Jarak ke tombol play */
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%; /* Nanti digerakin JS */
+    height: 100%;
+    background: #00f2ff; /* Warna neon */
+    box-shadow: 0 0 10px #00f2ff;
+    transition: width 0.1s linear;
+}
+/* Container Utama biar Kiri-Kanan */
+.main-container {
+    display: flex;
+    justify-content: center; /* Tengahin secara horizontal */
+    align-items: flex-start; /* Biar nempel ke atas */
+    gap: 50px; /* Jarak antara player dan lirik */
+    padding-top: 100px; /* Atur jarak dari Navbar atas */
+    width: 100%;
+}
+
+/* Sisi Lirik */
+.lyrics-side {
+    max-width: 400px; /* Biar liriknya nggak melebar kemana-mana */
+    text-align: center; /* Lirik biasanya enak dibaca rata kiri */
+}
+
+.header-text {
+    margin: 0 0 20px 200px; /* Naikin teks HADEEH ke atas */
+    font-family: 'Orbitron', sans-serif; /* Pake font spaceship lu */
+    color: white;
+}
+
+#lyric-text {
+    color: #00f2ff;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+    font-weight: bold;
+    transition: opacity 0.3s ease-in-out;
+}
+/* Container buat ngatur posisi di kiri */
+.profile-container {
+    position: fixed; /* Biar dia anteng di kiri layar */
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+/* Base Card Profil */
+.profile-card {
+    padding: 100px;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid transparent; /* Awalnya gak nyala */
+    transition: all 0.4s ease; /* Biar pas nyala smooth */
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Foto Profil */
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    filter: grayscale(100%); /* Awalnya item putih biar dramatis */
+    transition: 0.4s;
+}
+/* --- EFEK INTERAKSI (LAMPU NEON NYALA) --- */
+.profile-card:hover {
+    border-color: #00f2ff; /* Warna neon */
+    box-shadow: 0 0 20px #00f2ff, inset 0 0 10px #00f2ff; /* Neon luar dalem */
+    background: rgba(0, 242, 255, 0.05); /* Background ikut glowing tipis */
+}
+
+.profile-card:hover .profile-img {
+    filter: grayscale(0%); /* Foto jadi berwarna pas di-hover */
+    box-shadow: 0 0 15px #00f2ff;
+}
+
+.profile-card:hover .profile-info h3 {
+    color: #00f2ff;
+    text-shadow: 0 0 5px #00f2ff;
+}
+
+
+.lyrics-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.gif-container {
+    text-align: center;
+}
+
+.sad-gif {
+    width: 300px; /* Atur ukuran GIF lu di sini */
+    border-radius: 20px;
+    /* Efek Neon di sekeliling GIF */
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.5), 0 0 40px rgba(0, 242, 255, 0.2);
+    border: 2px solid #00f2ff;
+    
+    /* ANIMASI BEAT OTOMATIS */
+    animation: pulse-beat 2s infinite ease-in-out;
+}
+
+.gif-caption {
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    margin-top: 15px;
+    text-shadow: 0 0 10px #00f2ff;
+    font-size: 1.2rem;
+}
+
+/* Animasi detak biar GIF-nya kembang kempis pelan (Sad Beat) */
+@keyframes pulse-beat {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+    }
+    50% {
+        transform: scale(1.05); /* Nge-zoom dikit pas beat */
+        box-shadow: 0 0 40px rgba(0, 242, 255, 0.8);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+    }
+}

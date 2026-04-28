@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zens Spaceship - Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="project-page">
+    
+    <div class="page-transition"><div class="loader-line"></div></div>
+    <audio id="soundHover" src="hover.mp3" preload="auto"></audio>
+    <audio id="soundClick" src="click.mp3" preload="auto"></audio>
+    <nav class="side-nav">
+        <div class="menu-btn" id="menuToggle">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+        <div class="nav-dropdown" id="navLinks">
+            <ul class="nav-list">
+                <li><a href="index.html">Welcome</a></li>
+                <li><a href="javascript:void(0)" id="openProfile">Profile</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="top-nav">
+        <nav class="nav-row">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="journey.html">Journey</a>
+            <a href="project.html" class="active">Project</a>
+            <a href="music.html">Music</a>
+        </nav>
+    </header>
+
+    <main class="scroll-container">
+        <div class="project-wrapper">
+            
+            <div class="project-header-profile">
+                <div class="profile-frame">
+                    <img src="bkgpp.jpg" alt="Profile">
+                </div>
+                <div class="profile-desc">
+                    <h2 class="neon-glow-text">Zazkia Priyatna</h2>
+                    <p>SYSTEM ARCHIVE: My digital portfolio showcasing various projects and experiments.</p>
+                </div>
+            </div>
+
+            <div class="project-grid">
+                <div class="project-card neon-box">
+                    <div class="img-slot"><img src="zenw.png"><div class="scan-line"></div></div>
+                    <div class="text-slot">
+                        <div class="tags"><span>Zens</span><span>Web</span></div>
+                        <h3>Galaxy Site</h3>
+                        <p>In this realm of midnight blue, the beauty of the endless sky meets a peace that reaches the soul's.</p>
+                        <a href="javascript:void(0)" class="btn-glow" onclick="openModal('proj1')">ACCESS DATA</a>
+                    </div>
+                </div>
+
+                <div class="project-card neon-box">
+                    <div class="img-slot"><img src="lla.png"><div class="scan-line"></div></div>
+                    <div class="text-slot">
+                        <div class="tags"><span>Arduino</span><span>Thinkercad</span></div>
+                        <h3>Live Lyric</h3>
+                        <p>An Arduino odyssey that breathes life into lyrics, turning electric currents into a luminous dance of poetry against the dark.</p>
+                        <a href="javascript:void(0)" class="btn-glow" onclick="openModal('proj2')">ACCESS DATA</a>
+                    </div>
+                </div>
+
+                <div class="project-card neon-box">
+                    <div class="img-slot"><img src="minecraft.jpg"><div class="scan-line"></div></div>
+                    <div class="text-slot">
+                        <div class="tags"><span>Minecraft</span></div>
+                        <h3>Building</h3>
+                        <p>Crafting monuments of light within a block-based void, where every stone is a star and every structure is a sanctuary in the infinite blue.</p>
+                        <a href="javascript:void(0)" class="btn-glow" onclick="openModal('proj3')">ACCESS DATA</a>
+                    </div>
+                </div>
+
+                <div class="project-card neon-box">
+                    <div class="img-slot"><img src="zenw.png"><div class="scan-line"></div></div>
+                    <div class="text-slot">
+                        <div class="tags"><span>Design</span></div>
+                        <h3>Web Design</h3>
+                        <p>Mapping the digital void through minimalist design, where deep indigo aesthetics meet the seamless flow of a future built on clarity.</p>
+                        <a href="javascript:void(0)" class="btn-glow" onclick="openModal('proj4')">ACCESS DATA</a>
+                    </div>
+                </div>
+
+                <div class="project-card neon-box">
+                    <div class="img-slot"><img src="minsim.png"><div class="scan-line"></div></div>
+                    <div class="text-slot">
+                        <div class="tags"><span>Minecraft</span></div>
+                        <h3>Mining Simulator</h3>
+                        <p>Delving into the deep obsidian crust to unearth hidden treasures, where every strike of the pickaxe echoes like a heartbeat in the silent dark..</p>
+                        <a href="javascript:void(0)" class="btn-glow" onclick="openModal('proj5')">ACCESS DATA</a>
+                    </div>
+                </div>
+
+                <div class="project-card neon-box">
+                    <div class="img-slot"><img src="drawing.jpg"><div class="scan-line"></div></div>
+                    <div class="text-slot">
+                        <div class="tags"><span>Art</span></div>
+                        <h3>BNHA Artwork</h3>
+                        <p>Every stroke a heartbeat, every shade a legacy bringing the legends of UA to life against the canvas of the infinite void</p>
+                        <a href="javascript:void(0)" class="btn-glow" onclick="openModal('proj6')">ACCESS DATA</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            
+            <h2 class="profile-name">Zazkia Priyatna</h2>
+            <p class="profile-subtitle">Where you can contact me</p>
+
+            <div class="contact-list">
+                <div class="contact-item">
+                    <span class="label">Email:</span>
+                    <a href="mailto:zezzsogood45556@gmail.com" class="value">zezzsogood45556@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="label">Instagram:</span>
+                    <a href="https://www.instagram.com/zezzdevilking?igsh=MXc3ZHZidXFvZ29hMQ==" class="value">@zezzdevilking</a>
+                </div>
+                <div class="contact-item">
+                    <span class="label">YouTube:</span>
+                    <a href="https://youtube.com/@nicetryzezz?si=y8kmv9VJW4SGHkLw" class="value">@nicetryzezz</a>
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button class="btn-home-modal" onclick="location.href='home.html'">Home</button>
+        </div>
+    </div>
+</div>
+    <div id="proj1" class="modal-project">
+    <div class="modal-project-content futuristic-frame">
+        <span class="close-project" onclick="closeModal('proj1')">&times;</span>
+        <div class="modal-body-layout">
+            <div class="modal-image-slot"><img src="robot.gif" alt="P1"></div>
+            <div class="modal-text-slot">
+                <h2 class="neon-text-blue">Galaxy Site</h2>
+                <div class="separator-line"></div>
+                <p>Beyond the Horizon. Where minimalist design meets the pulse of the infinite blue.</p>
+                <a href="#" target="_blank" class="btn-yt"><i class="fab fa-youtube"></i>YOU ARE HERE</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="proj2" class="modal-project">
+    <div class="modal-project-content futuristic-frame">
+        <span class="close-project" onclick="closeModal('proj2')">&times;</span>
+        <div class="modal-body-layout">
+            <div class="modal-image-slot"><img src="arduino.jpg" alt="P2"></div>
+            <div class="modal-text-slot">
+                <h2 class="neon-text-blue">LIVE LYRICS</h2>
+                <div class="separator-line"></div>
+                <p>Where code meets the rhythm of the machine.</p>
+                <a href="https://www.tinkercad.com/things/hQ7fOvC5Rjj-live-lyric-arduino-sederhana?sharecode=TuqWVouXLa6jXNLtR7o-9mx4LqPG9ZPL4bKfFMt0aH0" target="_blank" class="btn-yt"><i class="fab fa-youtube"></i>TRY PROJECT</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="proj3" class="modal-project">
+    <div class="modal-project-content futuristic-frame">
+        <span class="close-project" onclick="closeModal('proj3')">&times;</span>
+        <div class="modal-body-layout">
+            <div class="modal-image-slot"><img src="minecraft.jpg" alt="P3"></div>
+            <div class="modal-text-slot">
+                <h2 class="neon-text-blue">COZY VILLAGE</h2>
+                <div class="separator-line"></div>
+                <p>A sanctuary of flickering torches and silent blocks where peace dwells beneath the indigo clouds.</p>
+                <a href="https://youtu.be/mnZ8AbISt3s?si=AWQngQk3zt3xtHsf" target="_blank" class="btn-yt"><i class="fab fa-youtube"></i>GO TO PROJECT</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="proj4" class="modal-project">
+    <div class="modal-project-content futuristic-frame">
+        <span class="close-project" onclick="closeModal('proj4')">&times;</span>
+        <div class="modal-body-layout">
+            <div class="modal-image-slot"><img src="zenw.png" alt="P4"></div>
+            <div class="modal-text-slot">
+                <h2 class="neon-text-blue">DESIGN IN CANVA</h2>
+                <div class="separator-line"></div>
+                <p>Crafting digital horizons within a canvas of endless indigo where simplicity meets the cosmic flow.</p>
+                <a href="https://canva.link/zenswebdesignn" target="_blank" class="btn-yt"><i class="fab fa-youtube"></i>GO TO PROJECT</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="proj5" class="modal-project">
+    <div class="modal-project-content futuristic-frame">
+        <span class="close-project" onclick="closeModal('proj5')">&times;</span>
+        <div class="modal-body-layout">
+            <div class="modal-image-slot"><img src="minsim.png" alt="P5"></div>
+            <div class="modal-text-slot">
+                <h2 class="neon-text-blue">MINING SIMULATOR</h2>
+                <div class="separator-line"></div>
+                <p>Void Miner. Unearthing treasures hidden within the clouds, where the earth meets the infinite blue.</p>
+                <a href="https://youtu.be/ky0FvB8SUco?si=JZSAgal8muMw4xjr" target="_blank" class="btn-yt"><i class="fab fa-youtube"></i>GO TO PROJECT</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="proj6" class="modal-project">
+    <div class="modal-project-content futuristic-frame">
+        <span class="close-project" onclick="closeModal('proj6')">&times;</span>
+        <div class="modal-body-layout">
+            <div class="modal-image-slot"><img src="drawing.jpg" alt="P6"></div>
+            <div class="modal-text-slot">
+                <h2 class="neon-text-blue">BNHA</h2>
+                <div class="separator-line"></div>
+                <p>Etching the burning spirit of heroes into a canvas of starlight where every stroke becomes a legend.</p>
+                <a href="#" target="_blank" class="btn-yt"><i class="fab fa-youtube"></i>NO LINK</a>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="script.js"></script>
+    <script>
+    // Memastikan fungsi playClick bisa dipanggil oleh fungsi modal di luar
+    function playClick() {
+        const snd = document.getElementById('soundClick');
+        if(snd) {
+            snd.parentElement.style.display = "block"; // Kadang browser butuh ini
+            snd.currentTime = 0;
+            snd.play().catch(e => console.log("Klik terdeteksi tapi audio diblokir browser"));
+        }
+    }
+</script>
+</body>
+</html>

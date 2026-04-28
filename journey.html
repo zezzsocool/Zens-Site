@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zens Spaceship - Journey</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="journey-page">
+    
+    <div class="page-transition"><div class="loader-line"></div></div>
+    <audio id="soundHover" src="hover.mp3" preload="auto"></audio>
+    <audio id="soundClick" src="click.mp3" preload="auto"></audio>
+
+    <nav class="side-nav">
+        <div class="menu-btn" id="menuToggle">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+        <div class="nav-dropdown" id="navLinks">
+            <ul class="nav-list">
+                <li><a href="index.html">Welcome</a></li>
+                <li><a href="javascript:void(0)" id="openProfile">Profile</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="top-nav">
+        <nav class="nav-row">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="journey.html" class="active">Journey</a>
+            <a href="project.html">Project</a>
+            <a href="music.html">Music</a>
+
+        </nav>
+    </header>
+
+    <main class="scroll-container">
+        <div class="journey-wrapper">
+            <h1 class="main-title">Mission Logs: The Journey</h1>
+
+            <div class="category-block">
+                <h2 class="cat-title">City Expeditions</h2>
+                
+                <div class="journey-item">
+                    <div class="journey-card">
+                        <div class="hud-frame"><img src="city1.jpg" alt="City 1"></div>
+                    </div>
+                    <div class="journey-desc">
+                        <span class="log-date">LOG: 001</span>
+                        <h3>Cinema</h3>
+                        <p>Entering a lightless chamber where flickering dreams ignite the void, as the silver screen becomes a window to other galaxies.inspirasi futuristik yang sangat kuat untuk project web ini.</p>
+                    </div>
+                </div>
+
+                <div class="journey-item reverse">
+                    <div class="journey-card">
+                        <div class="hud-frame"><img src="city2.jpg" alt="City 2"></div>
+                    </div>
+                    <div class="journey-desc">
+                        <span class="log-date">LOG: 002</span>
+                        <h3>Building</h3>
+                        <p>A journey through the electric pulse of the city, where glass horizons and glowing corridors mirror the vibrant energy of a futuristic station.</p>
+                    </div>
+                </div>
+
+                <div class="journey-item">
+                    <div class="journey-card">
+                        <div class="hud-frame"><img src="city3.jpg" alt="City 3"></div>
+                    </div>
+                    <div class="journey-desc">
+                        <span class="log-date">LOG: 003</span>
+                        <h3>Mall Foodcourt</h3>
+                        <p>A symphony of flavors amidst the neon hum where the people gathers to share warmth under a glowing canopy.</p>
+                    </div>
+                </div>
+
+                <div class="journey-item reverse">
+                    <div class="journey-card">
+                        <div class="hud-frame"><img src="hills0.gif" alt="Hills 0"></div>
+                    </div>
+                    <div class="journey-desc">
+                        <span class="log-date">LOG: 004</span>
+                        <h3>Forest Mountain</h3>
+                        <p>Where the jagged spine of the world meets the emerald heart of the wild, a sanctuary of stillness beneath the cosmic tide.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-block">
+                <h2 class="cat-title">Hills Exploration</h2>
+                
+                <div class="journey-item">
+                    <div class="journey-card">
+                        <div class="hud-frame"><img src="hills1.jpg" alt="Hills 1"></div>
+                    </div>
+                    <div class="journey-desc">
+                        <span class="log-date">LOG: 005</span>
+                        <h3>Cycling Through the Hills</h3>
+                        <p>A journey on two wheels through the silent peaks, where the thin mountain air meets the rhythm of a wandering soul.</p>
+                    </div>
+                </div>
+
+                <div class="journey-item reverse">
+                    <div class="journey-card">
+                        <div class="hud-frame"><img src="hiils2.jpg" alt="Hills 2"></div>
+                    </div>
+                    <div class="journey-desc">
+                        <span class="log-date">LOG: 006</span>
+                        <h3>Mountain Sunset</h3>
+                        <p>Ciremai’s Gilded Shadow. Watching the sun sink behind the majestic peak of Ciremai, as the golden light dissolves into the deep indigo of our cosmic journey.</p>
+                    </div>
+                </div>
+                
+                </div>
+        </div>
+    </main>
+
+    <div id="profileModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2 class="profile-name">Zazkia Priyatna</h2>
+        <p class="profile-subtitle">Where you can contact me</p>
+        <div class="contact-list">
+            <div class="contact-item">
+                <span class="label">Email:</span>
+                <a href="mailto:zezzsogood45556@gmail.com" class="value">zezzsogood45556@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <span class="label">Instagram:</span>
+                <a href="https://www.instagram.com/zezzdevilking?igsh=MXc3ZHZidXFvZ29hMQ==" class="value">@zezzdevilking</a>
+            </div>
+            <div class="contact-item">
+                <span class="label">YouTube:</span>
+                <a href="https://youtube.com/@nicetryzezz?si=y8kmv9VJW4SGHkLw" class="value">@nicetryzezz</a>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-home-modal" onclick="location.href='home.html'">Home</button>
+        </div>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

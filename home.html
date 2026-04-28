@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zens Spacesip - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="home-page">
+    
+    <div class="page-transition"><div class="loader-line"></div></div>
+
+    <audio id="soundHover" src="hover.mp3" preload="auto"></audio>
+    <audio id="soundClick" src="click.mp3" preload="auto"></audio>
+
+    <nav class="side-nav">
+        <div class="menu-btn" id="menuToggle">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+        <div class="nav-dropdown" id="navLinks">
+            <ul class="nav-list">
+                <li><a href="index.html">Welcome</a></li>
+                <li><a href="javascript:void(0)" id="openProfile">Profile</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="top-nav">
+        <nav class="nav-row">
+            <a href="home.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="journey.html">Journey</a>
+            <a href="project.html">Project</a>
+            <a href="music.html">Music</a>
+        </nav>
+    </header>
+
+    <main class="home-container">
+        <div class="profile-layout">
+            <div class="text-area">
+                <h1 class="name-title">Zazkia Priyatna</h1>
+                <h3 class="job-tag">Captain/Web developer</h3>
+                <p class="desc-text">
+                    Welcome to the bridge of Zen’s Spaceship. I am Zen, your captain and guide through this silent expanse. This vessel was forged in the heart of the void, draped in the hues of a trillion miles of starlight, a seamless horizon of obsidian and electric sapphire that mirrors the profound stillness of the cosmic night. This is your sanctuary; a place where the relentless noise of the outside world fades into a whisper, filtered through the cold, clean lines of futuristic minimalism.
+
+As you step into my atmosphere, let the weight of gravity fall away. You are no longer a stranger, but a fellow voyager navigating the purest shades of indigo. Here, we find clarity in the shadows and inspiration in the pulse of a quiet mind. I invite you to drift with me toward a future as vast and breathtaking as the sky above. My deck is open, the coordinates are set, and I have been waiting for your arrival. Welcome! aboard the stars are ours to command.
+                </p>
+            </div>
+            <div class="image-area">
+                <div class="robot-frame-home">
+                    <img src="bkgpp.jpg" alt="Robot" class="robot-gif-home">
+                </div>
+            </div>
+        </div>
+    </main>
+
+<div id="profileModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2 class="profile-name">Zazkia Priyatna</h2>
+        <p class="profile-subtitle">Where you can contact me</p>
+        <div class="contact-list">
+            <div class="contact-item">
+                <span class="label">Email:</span>
+                <a href="mailto:zezzsogood45556@gmail.com" class="value">zezzsogood45556@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <span class="label">Instagram:</span>
+                <a href="https://www.instagram.com/zezzdevilking?igsh=MXc3ZHZidXFvZ29hMQ==" class="value">@zezzdevilking</a>
+            </div>
+            <div class="contact-item">
+                <span class="label">YouTube:</span>
+                <a href="https://youtube.com/@nicetryzezz?si=y8kmv9VJW4SGHkLw" class="value">@nicetryzezz</a>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-home-modal" onclick="location.href='home.html'">Home</button>
+        </div>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
